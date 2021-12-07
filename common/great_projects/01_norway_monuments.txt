@@ -1,0 +1,259 @@
+yggdrasil = {
+
+	# province it starts in
+	start = 22
+	date = 1444.01.01
+
+	time = {
+		months = 0
+	}
+
+	build_cost = 0
+	can_be_moved = no
+	move_days_per_unit_distance = 1
+	starting_tier = 1
+	type = monument
+
+	build_trigger = {
+	}
+
+	can_use_modifiers_trigger = {
+	}
+
+	can_upgrade_trigger = {
+	}
+
+	keep_trigger = {
+	}
+
+	#tier data
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+
+	province_modifiers = {
+		}
+
+	area_modifier = {
+		}
+
+	country_modifiers = {
+		}
+
+	on_upgraded = {
+		}
+
+	}
+
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+
+		cost_to_upgrade = {
+			factor = 1000
+		}
+
+		province_modifiers = {
+		}
+
+		area_modifier = {
+			local_unrest = -1
+		}
+
+		country_modifiers = {
+			administrative_efficiency = 0.05
+			global_manpower_modifier = 0.25
+		}
+
+		on_upgraded = {
+		}
+
+	}
+
+	tier_2 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 1000
+		}
+
+		province_modifiers = {
+		}
+
+		area_modifier = {
+			local_unrest = -1
+		}
+
+		country_modifiers = {
+			administrative_efficiency = 0.1
+			global_manpower_modifier = 0.50
+			prestige = 0.5
+		}
+
+		on_upgraded = {
+		}
+
+	}
+	
+	tier_3 = {
+		upgrade_time = {
+			months = 120
+		}
+
+		cost_to_upgrade = {
+			factor = 3000
+		}
+
+		province_modifiers = {
+		}
+
+		area_modifier = {
+			local_unrest = -1
+		}
+
+		country_modifiers = {
+			administrative_efficiency = 0.2
+			global_manpower_modifier = 1
+			prestige = 2
+			governing_capacity_modifier = 0.5
+			global_unrest = -2
+		}
+
+		on_upgraded = {
+		}
+	}
+}
+
+
+granavollen_runestone = {
+
+	# province it starts in
+	start = 20
+	date = 1444.01.01
+
+	time = {
+		months = 0
+	}
+
+	build_cost = 0
+	can_be_moved = yes
+	move_days_per_unit_distance = 1
+	starting_tier = 1
+	type = monument
+
+	build_trigger = {
+	}
+
+	can_use_modifiers_trigger = {
+	}
+
+	can_upgrade_trigger = {
+	}
+
+	keep_trigger = {
+	}
+
+	#tier data
+	tier_0 = {
+		upgrade_time = {
+			months = 0
+		}
+
+	province_modifiers = {
+		}
+
+	area_modifier = {
+		}
+
+	country_modifiers = {
+		}
+
+	on_upgraded = {
+		}
+
+	}
+
+	tier_1 = {
+		upgrade_time = {
+			months = 120
+		}
+
+		cost_to_upgrade = {
+			factor = 400
+		}
+
+		province_modifiers = {
+		}
+
+		area_modifier = {
+			tax_income = 1
+		}
+
+		country_modifiers = {
+			global_regiment_cost = -0.10
+			culture_conversion_cost = -0.05
+		}
+
+		on_upgraded = {
+		}
+
+	}
+
+	tier_2 = {
+		upgrade_time = {
+			months = 120
+		}
+		cost_to_upgrade = {
+			factor = 700
+		}
+
+		province_modifiers = {
+		}
+
+		area_modifier = {
+			tax_income = 2
+		}
+
+		country_modifiers = {
+			global_regiment_cost = -0.20
+			discipline = 0.05
+			culture_conversion_cost = -0.15
+			military_tactics = 0.3
+		}	
+
+		on_upgraded = {
+		}
+
+	}
+	
+	tier_3 = {
+		upgrade_time = {
+			months = 120
+		}
+
+		cost_to_upgrade = {
+			factor = 1000
+		}
+
+		province_modifiers = {
+		}
+
+		area_modifier = {
+			tax_income = 3
+		}
+
+		country_modifiers = {
+			global_regiment_cost = -0.30
+			discipline = 0.15
+			culture_conversion_cost = -0.25
+			military_tactics = 0.7
+		}
+
+		on_upgraded = {
+		}
+
+	}
+}
