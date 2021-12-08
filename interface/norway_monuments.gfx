@@ -1,14 +1,10 @@
 spriteTypes = {
-
-		spriteType = {
+	spriteType = {
 		name = "GFX_great_project_yggdrasil"	
 		texturefile = "gfx//interface//great_projects//great_project_yggdrasil.dds"
 	}
-	
-		spriteType = {
+	spriteType = {
 		name = "GFX_great_project_granavollen_runestone"	
 		texturefile = "gfx//interface//great_projects//great_project_granavollen_runestone.dds"
 	}
-	
-
 }
