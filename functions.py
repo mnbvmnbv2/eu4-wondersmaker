@@ -104,5 +104,5 @@ def raw_to_dicts(monuments_raw):
         tier1 = tier(1, int(raw[3]), int(raw[4]), parse_modifs(raw[5]), parse_modifs(raw[6]), parse_modifs(raw[7]), parse_modifs(raw[8]))
         tier2 = tier(2, int(raw[9]), int(raw[10]), parse_modifs(raw[11]), parse_modifs(raw[12]), parse_modifs(raw[13]), parse_modifs(raw[14]))
         tier3 = tier(3, int(raw[15]), int(raw[16]), parse_modifs(raw[17]), parse_modifs(raw[18]), parse_modifs(raw[19]), parse_modifs(raw[20]))
-        monuments.append(monument(raw[0], raw[1], raw[2], tier1, tier2, tier3))
+        monuments.append(monument(raw[0], int(raw[1]), int(raw[2]), tier1, tier2, tier3))
     return monuments
