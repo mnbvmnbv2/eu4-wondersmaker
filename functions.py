@@ -33,6 +33,12 @@ def to_txt(monum):
     txt += '\n}\n'
     return txt
 
+def common_txt(monuments):
+    txt = ''
+    for m in monuments:
+        txt += to_txt(m)
+    return txt
+
 def gfx_text(monuments):
     txt = 'spriteTypes = {\n'
     for monum in monuments:
@@ -52,3 +58,17 @@ def yml_txt(monuments):
     for monum in monuments:
         txt += ' %(name)s_title:0 "%(cap)s"\n %(name)s:0 "%(cap)s"\n great_project_%(name)s_title:0 "%(cap)s"\n' % {'name' : monum['name'], 'cap' : cap_name(monum['name'])}
     return txt
+
+def write_files(mod_name, monuments):
+    common = 'common/great_projects/01_{}.txt'.format(mod_name)
+    interface = 'interface/{}.gfx'.format(mod_name)
+    localisation = 'localisation/{}_l_english.yml'.format(mod_name)
+    f = open(common, 'w')
+    f.write(common_txt(monuments))
+    f.close()
+    f = open(interface, 'w')
+    f.write(gfx_text(monuments))
+    f.close()
+    f = open(localisation, 'w')
+    f.write(yml_txt(monuments))
+    f.close()
