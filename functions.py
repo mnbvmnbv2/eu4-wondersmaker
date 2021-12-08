@@ -61,7 +61,7 @@ def yml_txt(monuments):
         txt += ' %(name)s_title:0 "%(cap)s"\n %(name)s:0 "%(cap)s"\n great_project_%(name)s_title:0 "%(cap)s"\n' % {'name' : monum['name'], 'cap' : cap_name(monum['name'])}
     return txt
 
-def write_filesa(mod_name, monuments):
+def write_files(mod_name, monuments):
     common_dir = 'common/great_projects'
     os.makedirs(common_dir, exist_ok = True)
     common = '{}/01_{}.txt'.format(common_dir, mod_name)
@@ -87,3 +87,22 @@ def descriptor_file(version, name, game_ver, file_id):
     f = open('descriptor.mod', 'w')
     f.write(txt)
     f.close()
+
+def parse_modifs(modifs):
+    mods = modifs.split(',')
+    if mods[0] == '':
+        return []
+    else:
+        return mods
+
+def raw_to_dicts(monuments_raw):
+    monuments_raw_copy = monuments_raw
+    monuments_raw_copy.pop(0)
+    monuments = []
+    for raw in monuments_raw_copy:
+        print(raw)
+        tier1 = tier(1, int(raw[3]), int(raw[4]), parse_modifs(raw[5]), parse_modifs(raw[6]), parse_modifs(raw[7]), parse_modifs(raw[8]))
+        tier2 = tier(2, int(raw[9]), int(raw[10]), parse_modifs(raw[11]), parse_modifs(raw[12]), parse_modifs(raw[13]), parse_modifs(raw[14]))
+        tier3 = tier(3, int(raw[15]), int(raw[16]), parse_modifs(raw[17]), parse_modifs(raw[18]), parse_modifs(raw[19]), parse_modifs(raw[20]))
+        monuments.append(monument(raw[0], raw[1], raw[2], tier1, tier2, tier3))
+    return monuments
