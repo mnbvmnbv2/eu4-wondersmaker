@@ -14,5 +14,5 @@ if __name__ == '__main__':
         monuments_raw.append(x.split(';'))
 
     monuments = raw_to_dicts(monuments_raw)
-    write_files(mod_name, monuments)
+    write_files(mod_filenames, monuments)
     descriptor_file(mod_version, mod_name, game_version, file_id)
