@@ -1,3 +1,5 @@
+import os
+
 def monument(name, province, start_tier, tier1, tier2, tier3):
     return {'name' : name, 'province' : province, 'start_tier' : start_tier, 'tier1' : tier1, 'tier2' : tier2, 'tier3' : tier3}
 
@@ -59,10 +61,16 @@ def yml_txt(monuments):
         txt += ' %(name)s_title:0 "%(cap)s"\n %(name)s:0 "%(cap)s"\n great_project_%(name)s_title:0 "%(cap)s"\n' % {'name' : monum['name'], 'cap' : cap_name(monum['name'])}
     return txt
 
-def write_files(mod_name, monuments):
-    common = 'common/great_projects/01_{}.txt'.format(mod_name)
-    interface = 'interface/{}.gfx'.format(mod_name)
-    localisation = 'localisation/{}_l_english.yml'.format(mod_name)
+def write_filesa(mod_name, monuments):
+    common_dir = 'common/great_projects'
+    os.makedirs(common_dir, exist_ok = True)
+    common = '{}/01_{}.txt'.format(common_dir, mod_name)
+    interface_dir = 'interface'
+    os.makedirs(interface_dir, exist_ok = True)
+    interface = '{}/{}.gfx'.format(interface_dir, mod_name)
+    localisation_dir = 'localisation'
+    os.makedirs(localisation_dir, exist_ok = True)
+    localisation = '{}/{}_l_english.yml'.format(localisation_dir, mod_name)
     f = open(common, 'w')
     f.write(common_txt(monuments))
     f.close()
