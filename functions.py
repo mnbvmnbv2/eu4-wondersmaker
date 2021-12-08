@@ -80,3 +80,9 @@ def write_filesa(mod_name, monuments):
     f = open(localisation, 'w')
     f.write(yml_txt(monuments))
     f.close()
+
+def descriptor_file(version, name, game_ver, file_id):
+    txt = 'version="%(v)s"\ntags={\n    "Gameplay"\n    "Expansion"\n}\nname="%(n)s"\nsupported_version="%(g_ver)s"\nremote_file_id="%(id)d"' % {'v' : version, 'n' : name, 'g_ver' : game_ver, 'id' : file_id}
+    f = open('descriptor.mod', 'w')
+    f.write(txt)
+    f.close()

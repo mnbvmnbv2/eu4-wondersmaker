@@ -1,2 +1,9 @@
 .ipynb_checkpoints
 __pycache__
+common
+gfx
+interface
+localisation
+pictures
+thumbnail.png
+descriptor.mod
