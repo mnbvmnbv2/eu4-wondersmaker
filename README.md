@@ -10,6 +10,12 @@ Province list:
 
 https://eu4.paradoxwikis.com/Geographical_list_of_provinces
 
+Website for finding art:
+
+https://openartbrowser.org/en/
+
+(There are probably tons of others, feel free to tips me of others if you want)
+
 ## Instructions:
 
 Start by opening EU4 Paradox Launcher. Go to `All installed mods` and click `Upload Mod` and then click `Create a mod`.
