@@ -98,10 +98,17 @@ def write_files(mod_name, monuments):
     os.makedirs('gfx\interface\great_projects', exist_ok=True)
 
 
-def descriptor_file(version, name, game_ver, file_id):
-    txt = 'version="%(v)s"\ntags={\n    "Gameplay"\n    "Expansion"\n}\nname="%(n)s"\nsupported_version="%(g_ver)s"\nremote_file_id="%(id)d"' % {
-        'v': version, 'n': name, 'g_ver': game_ver, 'id': file_id}
+def descriptor_file(version, name, game_ver):
+    txt = 'version="%(v)s"\ntags={\n    "Gameplay"\n    "Expansion"\n}\nname="%(n)s"\nsupported_version="%(g_ver)s"' % {
+        'v': version, 'n': name, 'g_ver': game_ver}
     f = open('descriptor.mod', 'w')
+    f.write(txt)
+    f.close()
+
+def mod_file(foldername, version, name, game_ver):
+    txt = 'version="%(v)s"\ntags={\n    "Gameplay"\n    "Expansion"\n}\nname="%(n)s"\nsupported_version="%(g_ver)s"' % {
+        'v': version, 'n': name, 'g_ver': game_ver}
+    f = open('%(n)s.mod' % {'n' : foldername}, 'w')
     f.write(txt)
     f.close()
 
