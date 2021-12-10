@@ -145,6 +145,8 @@ def to_folder(name):
     shutil.move(source, destination)
     source = 'gfx'
     shutil.move(source, destination)
+    source = 'descriptor.mod'
+    shutil.move(source, destination)
     try:
         source = glob.glob('pictures/thumbnail*')
         shutil.copyfile(source, destination)
