@@ -106,8 +106,8 @@ def descriptor_file(version, name, game_ver):
     f.close()
 
 def mod_file(foldername, version, name, game_ver):
-    txt = 'version="%(v)s"\ntags={\n    "Gameplay"\n    "Expansion"\n}\nname="%(n)s"\nsupported_version="%(g_ver)s"' % {
-        'v': version, 'n': name, 'g_ver': game_ver}
+    txt = 'version="%(v)s"\ntags={\n    "Gameplay"\n    "Expansion"\n}\nname="%(n)s"\nsupported_version="%(g_ver)s\npath="%(fn)s"' % {
+        'v': version, 'n': name, 'g_ver': game_ver, 'fn' : foldername}
     f = open('%(n)s.mod' % {'n' : foldername}, 'w')
     f.write(txt)
     f.close()
