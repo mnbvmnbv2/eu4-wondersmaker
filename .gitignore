@@ -4,7 +4,7 @@ common
 gfx
 interface
 localisation
-pictures
 thumbnail.png
 descriptor.mod
 notebook.ipynb
+pictures/*
