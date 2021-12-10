@@ -4,7 +4,7 @@ mod_foldername = 'norway_monuments_mod'
 mod_filenames = 'norway_monuments'
 mod_version = '1.0'
 mod_name = 'Monuments of norway'
-game_version = '1.32.2.0'
+game_version = '1.32.*'
 # remember to put in pictures and thumbnail
 
 if __name__ == '__main__':
