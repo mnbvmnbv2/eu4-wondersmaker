@@ -1,4 +1,6 @@
 import os
+import shutil
+import glob
 
 
 def monument(name, province, start_tier, tier1, tier2, tier3):
@@ -117,7 +119,6 @@ def raw_to_dicts(monuments_raw):
     monuments_raw_copy.pop(0)
     monuments = []
     for raw in monuments_raw_copy:
-        print(raw)
         tier1 = tier(1, int(raw[3]), int(raw[4]), parse_modifs(raw[5]), parse_modifs(
             raw[6]), parse_modifs(raw[7]), parse_modifs(raw[8]))
         tier2 = tier(2, int(raw[9]), int(raw[10]), parse_modifs(raw[11]), parse_modifs(
@@ -127,3 +128,25 @@ def raw_to_dicts(monuments_raw):
         monuments.append(monument(raw[0], int(
             raw[1]), int(raw[2]), tier1, tier2, tier3))
     return monuments
+
+def to_folder(name):
+    try:
+        shutil.rmtree(name)
+    except:
+        print(':(')
+    os.makedirs(name, exist_ok=True)
+    destination = name
+    
+    source = 'common'
+    shutil.move(source, destination) 
+    source = 'localisation'
+    shutil.move(source, destination)
+    source = 'interface'
+    shutil.move(source, destination)
+    source = 'gfx'
+    shutil.move(source, destination)
+    try:
+        source = glob.glob('pictures/thumbnail*')
+        shutil.copyfile(source, destination)
+    except:
+        print('couldnt copy thumbnail')
