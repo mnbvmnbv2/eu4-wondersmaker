@@ -28,7 +28,8 @@ def modifs_to_txt(lis):
 
 
 def tier_to_txt(tier):
-    txt = '    %(tier)s = {\n        upgrade_time = {\n            months = %(time)d\n        }\n        cost_to_upgrade = {\n            factor = %(cost)d\n        }\n        province_modifiers = {\n%(prov)s        }\n        area_modifier = {\n%(area)s        }\n        country_modifiers = {\n%(coun)s        }\n        on_upgraded = {\n%(upgr)s        }\n    }' % {'tier': tier['tier'], 'time': tier['upgrade_time'], 'cost': tier['upgrade_cost'], 'prov': modifs_to_txt(tier['province_mods']), 'area': modifs_to_txt(tier['area_mods']), 'coun': modifs_to_txt(tier['country_mods']), 'upgr': modifs_to_txt(tier['province_mods'])}
+    txt = '    %(tier)s = {\n        upgrade_time = {\n            months = %(time)d\n        }\n        cost_to_upgrade = {\n            factor = %(cost)d\n        }\n        province_modifiers = {\n%(prov)s        }\n        area_modifier = {\n%(area)s        }\n        country_modifiers = {\n%(coun)s        }\n        on_upgraded = {\n%(upgr)s        }\n    }' % {
+        'tier': tier['tier'], 'time': tier['upgrade_time'], 'cost': tier['upgrade_cost'], 'prov': modifs_to_txt(tier['province_mods']), 'area': modifs_to_txt(tier['area_mods']), 'coun': modifs_to_txt(tier['country_mods']), 'upgr': modifs_to_txt(tier['province_mods'])}
     return txt
 
 
@@ -105,10 +106,11 @@ def descriptor_file(version, name, game_ver):
     f.write(txt)
     f.close()
 
+
 def mod_file(foldername, version, name, game_ver):
     txt = 'version="%(v)s"\ntags={\n    "Gameplay"\n    "Expansion"\n}\nname="%(n)s"\nsupported_version="%(g_ver)s\npath="%(fn)s"' % {
-        'v': version, 'n': name, 'g_ver': game_ver, 'fn' : foldername}
-    f = open('%(n)s.mod' % {'n' : foldername}, 'w')
+        'v': version, 'n': name, 'g_ver': game_ver, 'fn': foldername}
+    f = open('%(n)s.mod' % {'n': foldername}, 'w')
     f.write(txt)
     f.close()
 
@@ -136,6 +138,7 @@ def raw_to_dicts(monuments_raw):
             raw[1]), int(raw[2]), tier1, tier2, tier3))
     return monuments
 
+
 def to_folder(name):
     try:
         shutil.rmtree(name)
@@ -143,9 +146,9 @@ def to_folder(name):
         print(':(')
     os.makedirs(name, exist_ok=True)
     destination = name
-    
+
     source = 'common'
-    shutil.move(source, destination) 
+    shutil.move(source, destination)
     source = 'localisation'
     shutil.move(source, destination)
     source = 'interface'
